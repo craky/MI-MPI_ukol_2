@@ -1,0 +1,157 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[utf8]{inputenc} %kodovani znaku v~textovem souboru
+\usepackage[T1]{fontenc} %kodovani znaku na~vystupu
+\usepackage[czech]{babel} %prizpusobeni jazyku, napr. deleni slov
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage[makeroom]{cancel}
+
+\begin{document}
+
+\includegraphics[width=0.15\textwidth]{./img/qr_usarmap_krakovoj.png}~\\[1cm]
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Autor:}\\
+Vojtěch \textsc{Krákora}
+\end{flushleft}
+\end{minipage}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Cvičení:}\\
+Čtvrtek 9:15
+\end{flushleft}
+\end{minipage}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Věc:} \\
+MI-MPI \textsc{2. úkol}
+\end{flushleft}
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 1_
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{1. úloha}
+ \subsection*{a)}
+  Číslo $-\frac{1}{13}$ se nedá zapsat ve tvaru $\frac{n}{2^l}$, kde $n,l \in Z$, bude tedy periodické v binární reprezentaci.
+  Dále budu postupovat dle nápovědy pomocí hladového algoritmu.
+  Známenko změním jen jedním bitem, proto číslo do binárního kodu převedu jako  $\frac{1}{13}$.
+  
+  Je třeba najít takové $k$, pro které platí $2^{k+1} > \frac{1}{13} \geq 2^k$. To platí pro $k = -4$.
+  Hladový algoritmus:
+
+  $$a_{-4} = 1\qquad r_{-4} = \frac{\frac{1}{13}}{2^{-4}} -a_{-4} = \frac{3}{13}$$
+  $$a_{-5} = \lfloor 2\frac{3}{13}\rfloor = 0 \qquad r_{-5} =  \frac{6}{13}$$
+  $$a_{-6} = \lfloor 2\frac{6}{13}\rfloor = 0 \qquad r_{-6} =  \frac{2}{13}$$
+  $$a_{-7} = \lfloor 2\frac{12}{13}\rfloor = 1 \qquad r_{-7} =  \frac{11}{13}$$
+  $$a_{-8} = \lfloor 2\frac{11}{13}\rfloor = 1 \qquad r_{-8} =  \frac{9}{13}$$
+  $$a_{-9} = \lfloor 2\frac{9}{13}\rfloor = 1 \qquad r_{-9} =  \frac{5}{13}$$
+  $$a_{-10} = \lfloor 2\frac{5}{13}\rfloor = 0 \qquad r_{-10} =  \frac{10}{13}$$
+  $$a_{-11} = \lfloor 2\frac{10}{13}\rfloor = 1 \qquad r_{-11} =  \frac{7}{13}$$
+  $$a_{-12} = \lfloor 2\frac{7}{13}\rfloor = 1 \qquad r_{-12} =  \frac{1}{13}$$
+  $$a_{-13} = \lfloor 2\frac{1}{13}\rfloor = 0 \qquad r_{-13} =  \frac{2}{13}$$
+  $$a_{-14} = \lfloor 2\frac{2}{13}\rfloor = 0 \qquad r_{-14} =  \frac{4}{13}$$
+  $$a_{-15} = \lfloor 2\frac{4}{13}\rfloor = 0 \qquad r_{-15} =  \frac{8}{13}$$
+  $$a_{-16} = \lfloor 2\frac{8}{13}\rfloor = 1 \qquad r_{-16} =  \frac{3}{13} == r_{-4}$$
+  
+  Protože se $r_{-4}$ rovná $r_{-16}$ našli jsme periodu.
+  
+  Číslo tedy vyjádříme jako $(-1)^1 (1.\overline{001110110001})*2^{123-127}$.
+  
+  Tedy: $1|01111011|00111011000100111011000$
+  
+ \subsection*{b)}
+  I číslo $\frac{1}{17}$ bude periodické. Postup aplikuji stejný jako v předchozím příkladě.
+  $$a_{-5} = 1  \qquad r_{-5} =  \frac{15}{17}$$
+  $$a_{-6} = \lfloor 2\frac{15}{17}\rfloor = 1 \qquad r_{-6} =  \frac{15}{17}$$
+  $$a_{-7} = \lfloor 2\frac{15}{17}\rfloor = 1 \qquad r_{-7} =  \frac{19}{17}$$
+  $$a_{-8} = \lfloor 2\frac{19}{17}\rfloor = 1 \qquad r_{-8} =  \frac{1}{17}$$
+  $$a_{-9} = \lfloor 2\frac{1}{17}\rfloor = 0 \qquad r_{-9} =  \frac{2}{17}$$
+  $$a_{-10} = \lfloor 2\frac{2}{17}\rfloor = 0 \qquad r_{-10} =  \frac{4}{17}$$
+  $$a_{-11} = \lfloor 2\frac{4}{17}\rfloor = 0 \qquad r_{-11} =  \frac{8}{17}$$
+  $$a_{-12} = \lfloor 2\frac{8}{17}\rfloor = 0 \qquad r_{-12} =  \frac{16}{17}$$
+  $$a_{-13} = \lfloor 2\frac{16}{17}\rfloor = 1 \qquad r_{-13} =  \frac{15}{17} == r_{-5} $$
+  
+  Výsledek tedy zápíšeme jako $0|01111010|11100001111000011110000$.
+  
+  \subsection*{c)}
+  Součet čísel v desítkové soustavě je:
+  
+  $$-\frac{1}{13}+\frac{1}{17} = -\frac{4}{221}$$
+  
+  Hledáme $2^{k+1} > \frac{4}{221} \geq 2^k$. To platí pro $k = -6$. Opět stejným postupem jako v předešlích případech jsem postupoval dále.
+  Pro kontrolu uvedenu některé řádky algoritmu:
+  
+  $$a_{-6} = 1  \qquad r_{-6} =  \frac{35}{221}$$
+  $$\ldots$$
+  $$a_{-17} = 0  \qquad r_{-17} =  \frac{76}{221}$$
+  $$\ldots$$
+  $$a_{-29} = 1  \qquad r_{-29} =  \frac{103}{221}$$
+  
+  Výsledkem součtu čísel z příkladu \textbf{a)} a \textbf{b)} je: $1|01111001|00101000100010110000001$.
+  
+\section*{2. úloha}
+ \subsection*{a)}
+  Nejprve algoritmus udělám tak, že se ženy budou dvořit mužům.
+
+  \begin{table}[h]
+  \begin{tabular}{lllll}
+  \hline
+  \multicolumn{5}{l}{{  Ženské priority}}                                                                                                                                                                                     \\ \hline
+  {1}                       & {2}                      & {3}                      & {4}                      & {5}                      \\ \hline
+  \multicolumn{1}{|l|}{{  \xcancel{2}}} & \multicolumn{1}{l|}{{  \xcancel{2}}} & \multicolumn{1}{l|}{{  \xcancel{2}}} & \multicolumn{1}{l|}{{  \xcancel{1}}} & \multicolumn{1}{l|}{{  \xcancel{1}}} \\ \hline
+  \multicolumn{1}{|l|}{{  \xcancel{3}}} & \multicolumn{1}{l|}{{  \xcancel{3}}} & \multicolumn{1}{l|}{{  1}} & \multicolumn{1}{l|}{{  2}} & \multicolumn{1}{l|}{{  \xcancel{2}}} \\ \hline
+  \multicolumn{1}{|l|}{{  4}} & \multicolumn{1}{l|}{{  5}} & \multicolumn{1}{l|}{{  3}} & \multicolumn{1}{l|}{{  3}} & \multicolumn{1}{l|}{{  3}} \\ \hline
+  \multicolumn{1}{|l|}{{  5}} & \multicolumn{1}{l|}{{  4}} & \multicolumn{1}{l|}{{  5}} & \multicolumn{1}{l|}{{  4}} & \multicolumn{1}{l|}{{  4}} \\ \hline
+  \multicolumn{1}{|l|}{{  1}} & \multicolumn{1}{l|}{{  1}} & \multicolumn{1}{l|}{{  4}} & \multicolumn{1}{l|}{{  5}} & \multicolumn{1}{l|}{{  5}} \\ \hline
+  \end{tabular}
+  \end{table}
+  
+  Z tabulky vyplynulu stabilní párování:
+  $$(z_1,m_4),(z_2,m_5),(z_3,m_1),(z_4,m_2),(z_5,m_3)$$
+
+  Nyní otočíme \uv{dvořitele} a budou se muži dvořit ženám. Jejich úspěšnost vystihuje tabulka: 
+
+  \begin{table}[h]
+  \begin{tabular}{lllll}
+  \hline
+  \multicolumn{5}{l}{{  Mužské priority}}                                                                                                                                                                                     \\ \hline
+  {1}                       & {2}                      & {3}                      & {4}                      & {5}                      \\ \hline
+  \multicolumn{1}{|l|}{{  1}} & \multicolumn{1}{l|}{{  4}} & \multicolumn{1}{l|}{{  \xcancel{4}}} & \multicolumn{1}{l|}{{  \xcancel{4}}} & \multicolumn{1}{l|}{{  \xcancel{4}}} \\ \hline
+  \multicolumn{1}{|l|}{{  2}} & \multicolumn{1}{l|}{{  5}} & \multicolumn{1}{l|}{{  5}} & \multicolumn{1}{l|}{{  2}} & \multicolumn{1}{l|}{{  3}} \\ \hline
+  \multicolumn{1}{|l|}{{  3}} & \multicolumn{1}{l|}{{  1}} & \multicolumn{1}{l|}{{  2}} & \multicolumn{1}{l|}{{  3}} & \multicolumn{1}{l|}{{  5}} \\ \hline
+  \multicolumn{1}{|l|}{{  4}} & \multicolumn{1}{l|}{{  2}} & \multicolumn{1}{l|}{{  1}} & \multicolumn{1}{l|}{{  1}} & \multicolumn{1}{l|}{{  1}} \\ \hline
+  \multicolumn{1}{|l|}{{  5}} & \multicolumn{1}{l|}{{  3}} & \multicolumn{1}{l|}{{  3}} & \multicolumn{1}{l|}{{  5}} & \multicolumn{1}{l|}{{  2}} \\ \hline
+  \end{tabular}
+  \end{table}
+
+  Z této tabulky vyplynulo druhé stabilní párování:
+  $$(z_1,m_1),(z_2,m_4),(z_3,m_5),(z_4,m_2),(z_5,m_3)$$
+  
+ \subsection*{b)}
+  Využiji toho, že když se dvoří muži dosáhnou nejlepší možné partnerky, tak aby bylo párování ještě stabilní a ženy v tomto případě dostanou nejhorší \uv{stabilní} partnery.
+  Když se dvoří ženy, tak jde o ten samí příklad, tedy nejlepší možnosti pro partnerky a nejhorší pro partnery.
+  
+  Tím jsme schopni udělat tabulku možných stabilních partnerů pro všechny ženy:
+  
+  \begin{table}[h]
+    \begin{tabular}{|l||l|l|l|}
+    \hline
+      $z_1$& $m_4$ & $m_5$  & $m_1$\\ \hline
+      $z_2$& $m_4$ & $m_5$ &\\ \hline
+      $z_3$& $m_5$ & $m_1$ &\\ \hline
+      $z_4$& $m_2$ &  &\\ \hline
+      $z_5$& $m_3$ &  & \\ \hline
+    \end{tabular}
+  \end{table}
+
+  Z tabulky a různých možných kombinací dostáváme následující tři párování:
+  $$(z_1,m_4),(z_2,m_5),(z_3,m_1),(z_4,m_2),(z_5,m_3)$$
+  $$(z_1,m_1),(z_2,m_4),(z_3,m_5),(z_4,m_2),(z_5,m_3)$$
+  $$(z_1,m_5),(z_2,m_4),(z_3,m_1),(z_4,m_2),(z_5,m_3)$$
+\end{document}
