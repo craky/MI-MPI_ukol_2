@@ -177,6 +177,37 @@ MI-MPI \textsc{2. úkol}
    $$2\sqrt{1-x} = 1$$
    $$\sqrt{1-x} = \frac{1}{2}$$
    $$ 1-x = \frac{1}{4}$$
-   $$1-\frac{1}{4} = x$$*
-   $$\frac{3}{4} = x$$ 
+   $$1-\frac{1}{4} = x$$
+   $$\frac{3}{4} = x$$
+   
+   Krom výše vypočteního $x = \frac{3}{4}$ budu podezírat z extrému  i $1$, která není zde definována nebo\v{t} by se ve zlomku dělilo nulou.
+   Z intervalu $(-\infty,\frac{3}{4})$ vezmeme například hodnotu $0$ a po dosazení do derivace získáme číslo $0,5$ z intervalu $(\frac{3}{4},1)$ 
+   zvolíme například hodnotu $0,84$ a vyjde $-0.25$ a poslední, z intervalu $(1,\infty)$. Zjiš\v{t}ujeme, že bod $(\frac{3}{4},\frac{5}{4})$ je lokální
+   maximum a bod $(1,1)$ je lokální minum.
+   
+ \section*{5.úloha}
+  To, že výraz neplatí se pokusím dokázat proti příkladem. Jeden který mě napadl je $a = 1, b = 3$, platí tedy, že $a^2 + b^3 = 1^2 + 3^3 = 1 + 27 = 28$,
+  číslo je 28 je dělitelné 7 ($28/7 = 4$). Předpoklad je tedy splněn a mělo by tedy platit, že $7|3$ a to není pravda. Číslo 3 není dělitelné 7.
+  
+ \section*{6.úloha}
+  Opravené zadání, vzdálenost se hledá od bodu (1,-1,0).
+  
+  Body grafu funkce jsou ve tvaru:
+  $$(x,y,f(x,y))$$
+  
+  Vzorec pro eukleidovou vzdálenost je:
+  $$d(x,y) = \sqrt{(x-1)^2+(y+1)^2+x^2-2xy+y^2}$$
+  
+  Využijeme toho, že odmocnina je ostře rostoucí funkce a budeme hledat minimum funkce $d(x,y)^2$. 
+  Dále uděláme parciální derivace dle $x$ a $y$, abychom zjistli minimum této funkce.
+  
+  $$d(x,y)dx = 4x-2y-2 = 0$$
+  $$d(x,y)dy = -2x+4y+2 = 0$$
+  
+  Jako řešení těchto rovnic vyjde, že $x = \frac{1}{3}$ a $y = -\frac{1}{3}$.
+  Souřadnici $z$ dopočteme jako $f(\frac{1}{3},-\frac{1}{3}) = \sqrt{\frac{1}{9}+\frac{2}{9}+\frac{1}{9}}$. Získáme tedy bod $(\frac{1}{3},-\frac{1}{3},\frac{2}{3})$.
+  
+  \section{7.úloha}
+  Budu postupovat dle definice uvedé v přednášce. Tedy budu násobit vektorem $x^tAx$ a dle parametrů zjiš\v{t}ovat o jakou definitnost matice jde.
+  
 \end{document}
