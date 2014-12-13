@@ -154,4 +154,29 @@ MI-MPI \textsc{2. úkol}
   $$(z_1,m_4),(z_2,m_5),(z_3,m_1),(z_4,m_2),(z_5,m_3)$$
   $$(z_1,m_1),(z_2,m_4),(z_3,m_5),(z_4,m_2),(z_5,m_3)$$
   $$(z_1,m_5),(z_2,m_4),(z_3,m_1),(z_4,m_2),(z_5,m_3)$$
+  
+\section*{3.úloha}
+    Pro najití extrémů se pokusím najít body podezřelé z extrému, tedy takové, kde se derivace původní funkce rovná 0.
+  \subsection*{a)}
+    Postup derivace:
+    $$ln(x+\sqrt{1+x^2}) dx$$
+    Nejdříve zderivuji podvýraz $\sqrt{1+x^2} dx$ jakožto $2x\frac{1}{2} \frac{1}{\sqrt{1+x^2}} = \frac{x}{\sqrt{1+x^2}}$ jde o derivaci složené funkce. Stejným stylem zderivuji celý původní výraz.
+    $$(1+\frac{x}{\sqrt{1+x^2}})\frac{1}{x+\sqrt{1+x^2}} = (\frac{\sqrt{1+x^2}}{\sqrt{1+x^2}}+\frac{x}{\sqrt{1+x^2}})\frac{1}{x+\sqrt{1+x^2}}$$
+    $$ =( \frac{x + \sqrt{1+x^2}}{\sqrt{1+x^2}})\frac{1}{x+\sqrt{1+x^2}} = \frac{1}{\sqrt{1+x^2}}$$
+    
+    Z výsledného výrazu je vidět, že se rovnat nule nikdy nebude, není tedy žádný bod podezřelí z extrému.
+    
+  \subsection*{b)}
+   Postup derivace:
+   $$x+\sqrt{1-x} dx$$
+   Opět nejdříve zderivuji podvýraz $\sqrt{1-x} dx$. Výsledkem bude: $-1(\frac{1}{2}\frac{1}{\sqrt{1-x}}) = -\frac{1}{2\sqrt{1-x}}$. 
+   
+   $$1-\frac{1}{2\sqrt{1-x}}$$
+   
+   Zde už nejspíš dokážu najít výraz derivace roven nule a tím bod podezřelý z extrému. Potřebuji aby se výraz $2\sqrt{1-x}$ rovnal jedné.
+   $$2\sqrt{1-x} = 1$$
+   $$\sqrt{1-x} = \frac{1}{2}$$
+   $$ 1-x = \frac{1}{4}$$
+   $$1-\frac{1}{4} = x$$*
+   $$\frac{3}{4} = x$$ 
 \end{document}
